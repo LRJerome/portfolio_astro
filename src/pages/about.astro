@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="A propos | Jérôme Le Roy" description="A propos de moi">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="À propos"
+				tagline="Je suis un développeur web et web mobile junior"
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/Jeff-at-work.jpg"
+					alt="Jérôme Le Roy au boulot"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Mon Parcours</h2>
+				<div class="content justify-center text-center">
+					<p>Depuis aussi loin que remontent mes souvenirs, il y a toujours eu un ou plusieurs ordinateurs à la maison, comme des compagnons de jeu fidèles.</p>
+					<br>
+					<p>Très tôt, l'informatique est devenue ma passion.  Je me suis formé grâce aux tutos en ligne, j'ai regardé beaucoup de videos "youtube". Mes débuts étaient modestes mais ô combien gratifiants , tout cela pour m'entraîner et, avouons-le, pour le plaisir pur et simple.</p>
+					<br>
+					<p>Ma passion n'a fait que croître avec le temps, telle une plante bien arrosée. Aujourd'hui, je suis déterminé à transformer cette passion en une carrière florissante. Pour ce faire, j'ai suivi une formation "Développeur web et web mobile", via l'organisme Nexxt-formation'. J'ai appris React.js pour le développement front-end et Node.js pour le back-end, afin de maîtriser l'art de créer des applications web complètes et performantes.</p>
+					<br>
+					<p>En parallèle, je me suis formé à Symfony, un framework PHP réputé pour sa robustesse et sa flexibilité. Je me suis également formé sur Next.js pour la diversitée qu'apporte un framwork en javascript Je suis également à l'aise avec les méthodologies Merise pour la modélisation des données et la conception des systèmes d'information, ainsi que les concepts de Modélisation Conceptuelle des Données (MCD). De plus, j'ai acquis des compétences en gestion de projet grâce à ma connaissance des méthodes Agile et Scrum, qui encouragent une approche itérative et collaborative du développement. Bref, je suis prêt à conquérir le monde du développement, un code à la fois !</p>
+
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Diplômes</h2>
+				<div class="content">
+					<p>- Bac compatibilé et gestion</p>
+					<p>- Développeur web et web mobile</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>- Esprit d'Initiative</p>
+					<p>- Collaboration et Communication</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>

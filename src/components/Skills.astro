@@ -1,0 +1,61 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="box skills">
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Passionné d'innovation</h2>
+		<p>Je suis constamment à l'affût des nouvelles technologies et je m'efforce d'intégrer des solutions innovantes dans mes projets.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Full Stack</h2>
+		<p>Je suis passionné par la création d'applications. J'aime apprendre et m'entraîner sur des projets personnels, en utilisant des frameworks modernes tels que NextJS ou Symfony. Du côté back-end, je travaille en Sql via PhpMyAdmin, tout en ayant une bonne compréhension des bases de données. Mon objectif est de concevoir des solutions robustes et efficaces.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Esprit d'équipe</h2>
+		<p>Je valorise la collaboration et la communication, en travaillant efficacement au sein d'équipes multidisciplinaires pour atteindre nos objectifs communs.</p>
+	</div>
+</section>
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>
